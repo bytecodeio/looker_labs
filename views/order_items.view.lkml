@@ -108,4 +108,27 @@ view: order_items {
     value_format_name: usd
   }
 
+  measure: distinct_orders {
+    type: count_distinct
+    sql: ${order_id} ;;
+  }
+
+  measure: orders_this_year {
+    type: count_distinct
+    sql: ${order_id} ;;
+    filters: [
+      created_date: "this year to day"
+    ]
+    value_format_name: decimal_0
+  }
+
+  measure: orders_last_year {
+    type: count_distinct
+    sql: ${order_id} ;;
+    filters: [
+      created_date: "last year",
+      created_time: "before 365 days ago"
+    ]
+    value_format_name: decimal_0
+  }
 }
