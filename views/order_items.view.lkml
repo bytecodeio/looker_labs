@@ -102,4 +102,10 @@ view: order_items {
     type: count
   }
 
+  measure: average_sales_price {
+    type: average
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
+
 }
