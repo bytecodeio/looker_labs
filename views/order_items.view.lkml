@@ -17,7 +17,8 @@ view: order_items {
       week,
       month,
       quarter,
-      year
+      year,
+      month_name
     ]
     sql: ${TABLE}.created_at ;;
   }
@@ -104,7 +105,7 @@ view: order_items {
 
   measure: average_sales_price {
     type: average
-    sql: ${sale_price} ;;
+    sql: ${sale_price}  ;;
     value_format_name: usd
   }
 
@@ -130,5 +131,11 @@ view: order_items {
       created_time: "before 365 days ago"
     ]
     value_format_name: decimal_0
+  }
+
+  measure: total_sales {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
   }
 }
