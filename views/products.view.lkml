@@ -52,5 +52,4 @@ view: products {
   measure: count {
     type: count
   }
-
 }

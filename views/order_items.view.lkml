@@ -3,7 +3,7 @@ view: order_items {
 
   dimension: id {
     primary_key: yes
-    hidden: yes
+    # hidden: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -39,7 +39,7 @@ view: order_items {
 
   dimension: inventory_item_id {
     type: number
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.inventory_item_id ;;
   }
 
@@ -101,6 +101,7 @@ view: order_items {
 
   measure: count {
     type: count
+    drill_fields: [users.gender,users.traffic_source,inventory_items.product_category,count,total_sales]
   }
 
   measure: average_sales_price {
