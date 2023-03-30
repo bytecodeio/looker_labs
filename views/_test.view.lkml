@@ -1,7 +1,7 @@
 # If necessary, uncomment the line below to include explore_source.
 # include: "order_items.explore.lkml"
 
-view: add_a_unique_name_1680027065 {
+view: add_a_unique_name_16800270657 {
   derived_table: {
     explore_source: order_items {
       column: category { field: products.category }
