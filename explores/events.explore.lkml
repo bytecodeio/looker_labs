@@ -1,5 +1,5 @@
 include: "../views/*.view.lkml"
 
-explore: events2 {
+explore: events {
   view_name: events
 }
